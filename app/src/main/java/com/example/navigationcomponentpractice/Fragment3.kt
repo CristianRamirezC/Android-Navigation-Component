@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.navigationcomponentpractice.databinding.Fragment3Binding
 
-class mainFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class Fragment3 : Fragment() {
+
+    private lateinit var binding: Fragment3Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,13 @@ class mainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = Fragment3Binding.inflate(inflater, container, false)
+
+        val args = Fragment3Args.fromBundle(requireArguments())
+        binding.tvDataFromMainActivity.text = args.dataToFragment3
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return binding.root
     }
 }

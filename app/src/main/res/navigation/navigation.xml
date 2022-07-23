@@ -7,7 +7,30 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.navigationcomponentpractice.mainFragment"
+        android:name="com.example.navigationcomponentpractice.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragment3"
+            app:destination="@id/fragment3"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.navigationcomponentpractice.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.navigationcomponentpractice.Fragment3"
+        android:label="fragment_3"
+        tools:layout="@layout/fragment_3" >
+        <argument
+            android:name="dataToFragment3"
+            app:argType="string" />
+    </fragment>
 </navigation>

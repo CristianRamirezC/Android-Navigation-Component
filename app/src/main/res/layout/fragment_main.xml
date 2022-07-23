@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".mainFragment">
+    tools:context=".MainFragment">
 
     <EditText
-        android:id="@+id/etDataToView3"
+        android:id="@+id/etDataToFragment3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Send data to Fragment 3"
@@ -20,11 +20,11 @@
         android:layout_height="100dp"
         android:layout_marginTop="108dp"
         android:text="Open a webView"
-        app:layout_constraintStart_toStartOf="@+id/etDataToView3"
-        app:layout_constraintTop_toBottomOf="@+id/etDataToView3" />
+        app:layout_constraintStart_toStartOf="@+id/etDataToFragment3"
+        app:layout_constraintTop_toBottomOf="@+id/etDataToFragment3" />
 
     <Button
-        android:id="@+id/btnRedirectToView3"
+        android:id="@+id/btnRedirectToFragment3"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:text="Go to Fragment 3"
@@ -46,7 +46,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:text="Open Alert Dialog"
-        app:layout_constraintStart_toStartOf="@+id/btnRedirectToView3"
+        app:layout_constraintStart_toStartOf="@+id/btnRedirectToFragment3"
         app:layout_constraintTop_toTopOf="@+id/btnRedirectToView4"/>
 
 
