@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".webViewFragment.WebViewFragment"
-    android:tag="webViewFragment">
+    tools:context=".EmptyFragment">
 
-    <WebView
-        android:id="@+id/wvGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/empty_fragment_text" />
+
 </FrameLayout>

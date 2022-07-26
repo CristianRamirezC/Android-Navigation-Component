@@ -18,6 +18,8 @@ class MainFragment : Fragment() {
     private lateinit var redirectToReceivingArgsFragmentBtn: Button
     private lateinit var dataToReceivingArgsFragment: EditText
     private lateinit var redirectToWebViewButton: Button
+    private lateinit var redirectToEmptyFragmentButton: Button
+    private lateinit var redirectToCloseAppAlertDialogButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,11 +34,13 @@ class MainFragment : Fragment() {
         redirectToReceivingArgsFragmentBtn = binding.btnRedirectToReceivingArgsFragment
         dataToReceivingArgsFragment = binding.etDataToReceivingArgsFragment
         redirectToWebViewButton = binding.btnButtonWebView
+        redirectToEmptyFragmentButton = binding.btnRedirectToEmptyView
+        redirectToCloseAppAlertDialogButton = binding.btnOpenAlertDialog
 
         redirectToReceivingArgsFragmentBtn.setOnClickListener {
             if (dataToReceivingArgsFragment.text.toString().isEmpty()) {
                 //Implementing alert dialog if etDataToReceivingArgsFragment is empty
-                alertDialogSetUp()
+                receivingArgsFragmentAlertDialogSetUp()
             } else {
                 //Or redirecting to fragment 3 with an argument otherwise
                 navigateToReceivingArgsFragment()
@@ -46,23 +50,44 @@ class MainFragment : Fragment() {
         redirectToWebViewButton.setOnClickListener {
             navigateToWebViewFragment()
         }
+
+        redirectToEmptyFragmentButton.setOnClickListener {
+            navigateToEmptyFragment()
+        }
+        redirectToCloseAppAlertDialogButton.setOnClickListener {
+            closeAppAlertDialogSetUp()
+        }
+
+
     }
 
-    private fun alertDialogSetUp() {
+    private fun receivingArgsFragmentAlertDialogSetUp() {
         val alertDialogBuilder = AlertDialog
             .Builder(requireActivity())
-        //setting title for the alert dialog
         alertDialogBuilder.setTitle(getString(R.string.error))
-        //setting message for the alert dialog
-        alertDialogBuilder.setMessage(getString(R.string.sendDataMandatory))
-        //setting OK button for the alter dialog
+        alertDialogBuilder.setMessage(getString(R.string.send_data_mandatory))
         alertDialogBuilder.setNeutralButton("OK") { _, _ ->
         }
-        //creating the alert dialog
         val alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.setCancelable(false)
-        //showing alert dialog
         alertDialog.show()
+    }
+
+    private fun closeAppAlertDialogSetUp() {
+        val alertDialogBuilder = AlertDialog
+            .Builder(requireActivity())
+        alertDialogBuilder.setTitle("Exit")
+        alertDialogBuilder.setMessage("Do you want to close this app?")
+        alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
+
+        }
+        alertDialogBuilder.setNegativeButton("No") { _, _ ->
+
+        }
+        val alertDialog: AlertDialog = alertDialogBuilder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+
     }
 
     private fun navigateToReceivingArgsFragment() {
@@ -78,6 +103,13 @@ class MainFragment : Fragment() {
             MainFragmentDirections.actionMainFragmentToWebViewFragment()
         )
     }
+
+    private fun navigateToEmptyFragment() {
+        binding.root.findNavController().navigate(
+            MainFragmentDirections.actionMainFragmentToEmptyFragment()
+        )
+    }
+
 }
 
 

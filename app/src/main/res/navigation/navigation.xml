@@ -18,10 +18,13 @@
             android:id="@+id/action_mainFragment_to_receiving_args_fragment"
             app:destination="@id/ReceivingArgsFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_emptyFragment"
+            app:destination="@id/emptyFragment" />
     </fragment>
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.example.navigationcomponentpractice.WebViewFragment"
+        android:name="com.example.navigationcomponentpractice.webViewFragment.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
     <fragment
@@ -33,4 +36,8 @@
             android:name="dataToReceivingArgsFragment"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="com.example.navigationcomponentpractice.emptyFragment.EmptyFragment"
+        android:label="EmptyFragment" />
 </navigation>

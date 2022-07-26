@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">NavigationComponentPractice</string>
-    <string name="webViewURL">https://www.google.com/</string>
+    <string name="web_view_URL">https://www.google.com/</string>
     <string name="send_data_to_receiving_args_fragment">Send data to Receiving Args Fragment</string>
     <string name="open_a_web_view">Open a webView</string>
     <string name="go_to_receiving_args_fragment">Go to Receiving Args Fragment</string>
-    <string name="go_to_view_4">Go to view 4</string>
+    <string name="go_to_empty_fragment">Go to empty fragment</string>
     <string name="open_alert_dialog">Open Alert Dialog</string>
     <string name="error">Error!</string>
-    <string name="sendDataMandatory">The \'Send data to Receiving Args Fragment\' field is mandatory!</string>
+    <string name="send_data_mandatory">The \'Send data to Receiving Args Fragment\' field is mandatory!</string>
+    <string name="empty_fragment_text">Hello from an empty fragment</string>
 </resources>

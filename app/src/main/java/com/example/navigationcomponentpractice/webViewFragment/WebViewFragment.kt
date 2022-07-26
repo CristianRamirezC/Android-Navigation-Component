@@ -1,4 +1,4 @@
-package com.example.navigationcomponentpractice
+package com.example.navigationcomponentpractice.webViewFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
+import com.example.navigationcomponentpractice.R
 import com.example.navigationcomponentpractice.databinding.FragmentWebViewBinding
 
 class WebViewFragment : Fragment() {
@@ -47,7 +48,7 @@ class WebViewFragment : Fragment() {
     private fun webViewSetUp() {
         webView = binding.wvGoogle
         webView.webViewClient = WebViewClient()
-        webView.loadUrl(getString(R.string.webViewURL))
+        webView.loadUrl(getString(R.string.web_view_URL))
         webView.settings.javaScriptEnabled = true
         webView.settings.setSupportZoom(true)
     }

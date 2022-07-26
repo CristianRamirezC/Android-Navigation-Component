@@ -33,11 +33,11 @@
         />
 
     <Button
-        android:id="@+id/btnRedirectToView4"
+        android:id="@+id/btnRedirectToEmptyView"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="184dp"
-        android:text="@string/go_to_view_4"
+        android:text="@string/go_to_empty_fragment"
         app:layout_constraintStart_toStartOf="@+id/btnButtonWebView"
         app:layout_constraintTop_toBottomOf="@+id/btnButtonWebView" />
 
@@ -47,6 +47,6 @@
         android:layout_height="100dp"
         android:text="@string/open_alert_dialog"
         app:layout_constraintStart_toStartOf="@+id/btnRedirectToReceivingArgsFragment"
-        app:layout_constraintTop_toTopOf="@+id/btnRedirectToView4"/>
+        app:layout_constraintTop_toTopOf="@+id/btnRedirectToEmptyView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
