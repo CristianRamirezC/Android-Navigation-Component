@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
@@ -13,15 +14,26 @@ import com.example.navigationcomponentpractice.databinding.FragmentWebViewBindin
 class WebViewFragment : Fragment() {
 
     private lateinit var binding: FragmentWebViewBinding
+    private lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        webViewFragmentOnBackHandling()
+    }
 
-        //Handling Fragment OnBack
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentWebViewBinding.inflate(inflater, container, false)
+        webViewSetUp()
+        return binding.root
+    }
+
+    private fun webViewFragmentOnBackHandling() {
         val callback: OnBackPressedCallback =
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    val webView = binding.wvGoogle
                     if (webView.canGoBack()) {
                         webView.goBack()
                     } else {
@@ -32,20 +44,11 @@ class WebViewFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentWebViewBinding.inflate(inflater, container, false)
-
-        //applying configurations to the webView
-        binding.wvGoogle.apply {
-            webViewClient = WebViewClient()
-            loadUrl("https://www.google.com/")
-            settings.javaScriptEnabled = true
-            settings.setSupportZoom(true)
-        }
-        return binding.root
+    private fun webViewSetUp() {
+        webView = binding.wvGoogle
+        webView.webViewClient = WebViewClient()
+        webView.loadUrl(getString(R.string.webViewURL))
+        webView.settings.javaScriptEnabled = true
+        webView.settings.setSupportZoom(true)
     }
 }

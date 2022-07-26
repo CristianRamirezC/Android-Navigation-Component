@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.navigationcomponentpractice.MainFragment"
+        android:name="com.example.navigationcomponentpractice.mainFragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -15,8 +15,8 @@
             app:destination="@id/webViewFragment"
             app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_mainFragment_to_fragment3"
-            app:destination="@id/fragment3"
+            android:id="@+id/action_mainFragment_to_receiving_args_fragment"
+            app:destination="@id/ReceivingArgsFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
@@ -25,12 +25,12 @@
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
     <fragment
-        android:id="@+id/fragment3"
-        android:name="com.example.navigationcomponentpractice.Fragment3"
-        android:label="fragment_3"
-        tools:layout="@layout/fragment_3" >
+        android:id="@+id/ReceivingArgsFragment"
+        android:name="com.example.navigationcomponentpractice.receivingArgsFragment.ReceivingArgsFragment"
+        android:label="RecievingArgs"
+        tools:layout="@layout/fragment_receiving_args">
         <argument
-            android:name="dataToFragment3"
+            android:name="dataToReceivingArgsFragment"
             app:argType="string" />
     </fragment>
 </navigation>
