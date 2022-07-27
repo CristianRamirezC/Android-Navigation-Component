@@ -17,16 +17,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val navHostFragment: NavHostFragment = supportFragmentManager
-            .findFragmentById(R.id.navHostFragment) as NavHostFragment
-        val navController: NavController = navHostFragment.findNavController()
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        setUpViewLogic()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController: NavController = this.findNavController(R.id.navHostFragment)
         return navController.navigateUp()
+    }
+
+    private fun setUpViewLogic() {
+        val navHostFragment: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navController: NavController = navHostFragment.findNavController()
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 }
 
