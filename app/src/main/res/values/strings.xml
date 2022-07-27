@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NavigationComponentPractice</string>
+    <string name="app_name">Navigation Component</string>
     <string name="web_view_URL">https://www.google.com/</string>
     <string name="send_data_to_receiving_args_fragment">Send data to Receiving Args Fragment</string>
     <string name="open_a_web_view">Open a webView</string>

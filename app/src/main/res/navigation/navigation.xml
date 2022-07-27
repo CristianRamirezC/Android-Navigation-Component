@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
+    android:label="@string/app_name"
     app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.navigationcomponentpractice.mainFragment.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_webViewFragment"
             app:destination="@id/webViewFragment"
@@ -25,12 +26,12 @@
     <fragment
         android:id="@+id/webViewFragment"
         android:name="com.example.navigationcomponentpractice.webViewFragment.WebViewFragment"
-        android:label="fragment_web_view"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_web_view" />
     <fragment
         android:id="@+id/ReceivingArgsFragment"
         android:name="com.example.navigationcomponentpractice.receivingArgsFragment.ReceivingArgsFragment"
-        android:label="RecievingArgs"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_receiving_args">
         <argument
             android:name="dataToReceivingArgsFragment"
@@ -39,5 +40,5 @@
     <fragment
         android:id="@+id/emptyFragment"
         android:name="com.example.navigationcomponentpractice.emptyFragment.EmptyFragment"
-        android:label="EmptyFragment" />
+        android:label="@string/app_name" />
 </navigation>
