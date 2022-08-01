@@ -5,7 +5,7 @@
     <string name="open_a_web_view">Open a webView</string>
     <string name="go_to_receiving_args_fragment">Go to Receiving Args Fragment</string>
     <string name="go_to_empty_fragment">Go to empty fragment</string>
-    <string name="open_alert_dialog">Open Alert Dialog</string>
+    <string name="close_app">Close App</string>
     <string name="error">Error!</string>
     <string name="send_data_mandatory">The \'Send data to Receiving Args Fragment\' field is mandatory!</string>
     <string name="empty_fragment_text">Hello from an empty fragment</string>

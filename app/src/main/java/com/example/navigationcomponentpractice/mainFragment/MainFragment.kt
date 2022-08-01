@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.navigationcomponentpractice.R
@@ -57,8 +58,6 @@ class MainFragment : Fragment() {
         redirectToCloseAppAlertDialogButton.setOnClickListener {
             closeAppAlertDialogSetUp()
         }
-
-
     }
 
     private fun receivingArgsFragmentAlertDialogSetUp() {
@@ -79,7 +78,7 @@ class MainFragment : Fragment() {
         alertDialogBuilder.setTitle("Exit")
         alertDialogBuilder.setMessage("Do you want to close this app?")
         alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
-
+            ActivityCompat.finishAffinity(requireActivity())
         }
         alertDialogBuilder.setNegativeButton("No") { _, _ ->
 
@@ -87,7 +86,6 @@ class MainFragment : Fragment() {
         val alertDialog: AlertDialog = alertDialogBuilder.create()
         alertDialog.setCancelable(false)
         alertDialog.show()
-
     }
 
     private fun navigateToReceivingArgsFragment() {
