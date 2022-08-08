@@ -1,2 +1,2 @@
 # Android-Navigation-Component
-Android navigation component practice
+Android practice app using Navigation Component for navigation and SafeArgs to pass arguments within fragments.
